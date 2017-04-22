@@ -1,16 +1,31 @@
 <style>
+
 #logo{
   text-align: center;
   color: white;
 }
 
-#article{
+#forum{
   position: relative;
+  bottom:60px;
   color: white;
   left: 900px;
 }
 
+#new{
+  position: relative;
+  bottom:34px;
+  color: white;
+  left: 30px;
+}
 
+#article{
+  position: relative;
+text-align: center;
+  color: white;
+  left: 450px;
+
+}
 .navbar-toggler{
   color: white;
 }
@@ -30,7 +45,11 @@
         <h3 id='logo'>Occipital Bridge Community</h3>
       </li>
 
-      <li><h4><%= link_to 'Articles', posts_path, :id => 'article' %></h4><li>
+      <li><h4><%= link_to 'Articles', posts_path, :id => 'article' %></h4></li>
+
+      <li><h4><%= link_to 'New Article', new_post_path, :id => 'new' %></h4></li>
+
+      <li><h4><%= link_to 'Forums', forums_path, :id => 'forum' %></h4></li>
     </ul>
     <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
       <%= link_to "Rails bootstrap", root_path, class: 'navbar-brand' %>

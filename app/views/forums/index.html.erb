@@ -1,0 +1,43 @@
+<style>
+tr.bordered {
+    border-bottom: 1px solid lightgray;
+}
+
+
+#bodydiv{
+
+  width: 200px;
+
+}
+</style>
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Forums</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forums.each do |forum| %>
+      <tr class="bordered">
+        <td><%= forum.title %></td>
+        <td><div id='bodydiv'> <%= truncate(word_wrap(forum.description,line_width: 50, break_sequence: "\r\n" ),:length => 32 ) %> </div></td>
+        <td><%= link_to 'Show', forum %></td>
+        <td><%= link_to 'Edit', edit_forum_path(forum) %></td>
+        <td><%= link_to 'Destroy', forum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Forum', new_forum_path %>
