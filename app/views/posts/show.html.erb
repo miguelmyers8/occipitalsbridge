@@ -1,8 +1,20 @@
+<style>
+#image{
+display: block;
+margin: 0 auto;
+}
+</style>
+
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>
   <%= @post.title %>
+</p>
+
+
+<p>
+  <%=image_tag @post.image.url(:large), :id => 'image' %>
 </p>
 
 <p>

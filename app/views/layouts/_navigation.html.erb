@@ -1,3 +1,22 @@
+<style>
+#logo{
+  text-align: center;
+  color: white;
+}
+
+#article{
+  position: relative;
+  color: white;
+  left: 900px;
+}
+
+
+.navbar-toggler{
+  color: white;
+}
+</style>
+
+
 <%# navigation styled for Bootstrap 4.0 %>
 <div class="container">
   <nav class="navbar navbar-dark bg-inverse">
@@ -7,6 +26,11 @@
           &#9776;
         </button>
       </li>
+      <li>
+        <h3 id='logo'>Occipital Bridge Community</h3>
+      </li>
+
+      <li><h4><%= link_to 'Articles', posts_path, :id => 'article' %></h4><li>
     </ul>
     <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
       <%= link_to "Rails bootstrap", root_path, class: 'navbar-brand' %>

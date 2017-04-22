@@ -1,29 +1,43 @@
+
+<style>
+#bodydiv{
+
+  width: 200px;
+}
+</style>
+
+
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1>Articles</h1>
 
 <table>
   <thead>
     <tr>
       <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody><hr>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
+        <td><hr><td>
+        <td><b><%= post.title %><b></td>
+
+        <td>  <%=image_tag post.image.url(:medium) %><hr> </td>
+
+        <td><h1> | </h1></td>
+        <td><div id="bodydiv"><%= truncate(word_wrap(post.body,line_width: 30, break_sequence: "\r\n" ),:length => 200 ) %><div><td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
-<hr>
+
 <br>
 
 <%= link_to 'New Post', new_post_path %>
