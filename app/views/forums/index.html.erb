@@ -20,7 +20,9 @@ tr.bordered {
   <thead>
     <tr>
       <th>Title</th>
+      <th>Topics</th>
       <th>Description</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -29,6 +31,7 @@ tr.bordered {
     <% @forums.each do |forum| %>
       <tr class="bordered">
         <td><%= forum.title %></td>
+        <td><small><%= forum.topics.count %> topics</small></td>
         <td><div id='bodydiv'> <%= truncate(word_wrap(forum.description,line_width: 50, break_sequence: "\r\n" ),:length => 32 ) %> </div></td>
         <td><%= link_to 'Show', forum %></td>
         <td><%= link_to 'Edit', edit_forum_path(forum) %></td>

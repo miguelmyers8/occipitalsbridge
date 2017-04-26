@@ -1,5 +1,6 @@
 class Forum < ApplicationRecord
   
+  has_many :topics
 
   has_attached_file  :image,
     styles: {large: "640x640>", medium: "300x300>", thumb: "150x150#" }, :use_timestamp => false

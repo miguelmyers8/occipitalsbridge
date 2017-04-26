@@ -10,5 +10,18 @@
   <%= @forum.description %>
 </p>
 
+
+<p>
+<% (@forum.topics).each do |topic| %>
+<strong>Name:</strong>
+<%= topic.name %><br>
+
+<% end %>
+</p>
+
+<p>
+<%= render 'topics/form' %>
+</p><br>
+
 <%= link_to 'Edit', edit_forum_path(@forum) %> |
 <%= link_to 'Back', forums_path %>
